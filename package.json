@@ -1,0 +1,19 @@
+{
+  "name": "proxy-pdp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@noble/curves": "^1.6.0",
+    "@polkadot-api/descriptors": "file:.papi/descriptors",
+    "dotenv": "^16.4.5",
+    "polkadot-api": "^1.7.5",
+    "scale-ts": "^1.6.1"
+  },
+  "type": "module"
+}
