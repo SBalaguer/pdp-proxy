@@ -5,6 +5,10 @@
     "wnd": {
       "chain": "westend2",
       "metadata": ".papi/metadata/wnd.scale"
+    },
+    "wndCT": {
+      "wsUrl": "wss://westend-coretime-rpc.polkadot.io",
+      "metadata": ".papi/metadata/wndCT.scale"
     }
   }
 }
