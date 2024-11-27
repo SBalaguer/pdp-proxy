@@ -3,8 +3,8 @@
 
 import dotenv from "dotenv";
 
-import { wndCT, MultiAddress } from "@polkadot-api/descriptors";
-import { createClient, Binary, FixedSizeBinary } from "polkadot-api";
+import { wndCT } from "@polkadot-api/descriptors";
+import { createClient, FixedSizeBinary, Enum } from "polkadot-api";
 import { getPolkadotSigner } from "polkadot-api/signer";
 import { getWsProvider } from "polkadot-api/ws-provider/node";
 import { withPolkadotSdkCompat } from "polkadot-api/polkadot-sdk-compat";
@@ -20,6 +20,7 @@ const client = createClient(
 // Create API
 const wndCTApi = client.getTypedApi(wndCT);
 
+// Helper functions, this can later go to another file
 const executeTx = async (tx, signer) => {
   try {
     const result = await tx.signAndSubmit(signer);
@@ -92,7 +93,34 @@ const main = async () => {
       interlace,
       PDP_SIGNER
     );
-    console.log("NEW CORES", interlacing);
+    console.log("Cores Interlaced ✅", interlacing);
+
+    /*
+    //TODO: The Enum for this function is not working.
+    console.log("Core assingment started...");
+    const assigned = await assignCore(
+      wndCTApi,
+      { begin: 295802, core: 9, mask: "0xffffffffff0000000000" },
+      PDP_SIGNER,
+      "Provisional"
+    );
+    if (!assigned.ok) throw new Error("Core couldn't be assigned", assigned);
+    console.log("Core assigned ✅");
+    */
+
+    /*
+    //Uncomment this to transfer
+    console.log("Started transfer...");
+    const transfered = await transferCore(
+      wndCTApi,
+      { begin: 295802, core: 14, mask: "0xf8000000000000000000" },
+      PDP_SIGNER,
+      "5Epzt6iUypmDX1cwuf5ePqKekauU56LxBSj4x4arj11C1Vus"
+    );
+    if (!transfered.ok)
+      throw new Error("Core couldn't be transfered", transfered);
+    console.log("Core transfered ✅");
+    */
   } catch (error) {
     console.error("An error occurred:", error);
   }
@@ -177,6 +205,28 @@ const interlaceRegions = async (api, region, parts, call, signer) => {
     throw error;
   }
 };
+
+const transferCore = async (api, region, pdp, to) => {
+  const transferCall = api.tx.Broker.transfer({
+    region_id: { ...region, mask: FixedSizeBinary.fromHex(region.mask) },
+    new_owner: to,
+  });
+
+  return await executeTx(transferCall, pdp);
+};
+
+//The Enum is not working :/
+const assignCore = async (api, region, pdp, task, finality) => {
+  const assignCall = api.tx.Broker.assign({
+    region_id: { ...region, mask: FixedSizeBinary.fromHex(region.mask) },
+    task,
+    finality: Enum("Finality", finality),
+  });
+
+  return await executeTx(assignCall, pdp);
+};
+
+//Utitilites: this can go to a separate file afterwards or we could also leverage other libraries.
 
 const calculatePivotMask = (mask) => {
   const binaryMask = maskToBin(mask);
