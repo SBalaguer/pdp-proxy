@@ -72,7 +72,6 @@ const main = async () => {
       ...regionInfo,
       mask: regionInfo.mask.asHex(),
     });
-
     // regionInfo is an object that looks like:
     //  {
     //   begin: 295802,
@@ -84,7 +83,6 @@ const main = async () => {
     //     asBytes: [Function (anonymous)],
     //     asOpaqueBytes: [Function (anonymous)]
     //  }
-
     console.log("Startig Interlace...");
     const interlacing = await interlaceRegions(
       wndCTApi,
@@ -94,20 +92,16 @@ const main = async () => {
       PDP_SIGNER
     );
     console.log("Cores Interlaced ✅", interlacing);
-
-    /*
-    //TODO: The Enum for this function is not working.
-    console.log("Core assingment started...");
-    const assigned = await assignCore(
-      wndCTApi,
-      { begin: 295802, core: 9, mask: "0xffffffffff0000000000" },
-      PDP_SIGNER,
-      "Provisional"
-    );
-    if (!assigned.ok) throw new Error("Core couldn't be assigned", assigned);
-    console.log("Core assigned ✅");
-    */
-
+    // console.log("Core assingment started...");
+    // const assigned = await assignCore(
+    //   wndCTApi,
+    //   { begin: 295802, core: 9, mask: "0xffffffffff0000000000" },
+    //   PDP_SIGNER,
+    //   2156,
+    //   "Provisional"
+    // );
+    // if (!assigned.ok) throw new Error("Core couldn't be assigned", assigned);
+    // console.log("Core assigned ✅");
     /*
     //Uncomment this to transfer
     console.log("Started transfer...");
@@ -215,12 +209,11 @@ const transferCore = async (api, region, pdp, to) => {
   return await executeTx(transferCall, pdp);
 };
 
-//The Enum is not working :/
 const assignCore = async (api, region, pdp, task, finality) => {
   const assignCall = api.tx.Broker.assign({
     region_id: { ...region, mask: FixedSizeBinary.fromHex(region.mask) },
     task,
-    finality: Enum("Finality", finality),
+    finality: Enum(finality),
   });
 
   return await executeTx(assignCall, pdp);
