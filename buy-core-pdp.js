@@ -83,15 +83,15 @@ const main = async () => {
     //     asBytes: [Function (anonymous)],
     //     asOpaqueBytes: [Function (anonymous)]
     //  }
-    console.log("Startig Interlace...");
-    const interlacing = await interlaceRegions(
-      wndCTApi,
-      { ...regionInfo, mask: regionInfo.mask.asHex() },
-      16,
-      interlace,
-      PDP_SIGNER
-    );
-    console.log("Cores Interlaced ✅", interlacing);
+    // console.log("Startig Interlace...");
+    // const interlacing = await interlaceRegions(
+    //   wndCTApi,
+    //   { ...regionInfo, mask: regionInfo.mask.asHex() },
+    //   16,
+    //   interlace,
+    //   PDP_SIGNER
+    // );
+    // console.log("Cores Interlaced ✅", interlacing);
     // console.log("Core assingment started...");
     // const assigned = await assignCore(
     //   wndCTApi,

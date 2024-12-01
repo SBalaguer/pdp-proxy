@@ -1,0 +1,336 @@
+{
+  "staging": [
+    {
+      "core": 10,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0xffffffffffffffffffff",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 11,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x07000000000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x0000000000000000001f",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x0000000000f800000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x0000000000003e000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x00000003e00000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0xf8000000000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x000000000000000003e0",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x000000000007c0000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x00000000000001f00000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x003e0000000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x0000007c000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x00000000000000007c00",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x000000000000000f8000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x0001f000000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x000000001f0000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x00000f80000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 15,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x07c00000000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "Available",
+      "relay": "Westend"
+    }
+  ],
+  "prod": [
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x0001f000000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x000000000000000003e0",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x003e0000000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x00000000000001f00000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x000000000007c0000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x0000007c000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x0000000000000000001f",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x00000003e00000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x0000000000f800000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x00000000000000007c00",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x0000000000003e000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x00000f80000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x000000000000000f8000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x000000001f0000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    },
+    {
+      "core": 14,
+      "begin": 295802,
+      "end": 297062,
+      "task": null,
+      "mask": "0x07c00000000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "Available",
+      "relay": "Westend"
+    }
+  ]
+}
