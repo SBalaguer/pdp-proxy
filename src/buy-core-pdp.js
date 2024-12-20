@@ -3,7 +3,7 @@
 
 import dotenv from "dotenv";
 
-import { wndCT } from "@polkadot-api/descriptors";
+import { wndCT, paseoCT } from "@polkadot-api/descriptors";
 import { createClient, FixedSizeBinary, Enum } from "polkadot-api";
 import { getPolkadotSigner } from "polkadot-api/signer";
 import { getWsProvider } from "polkadot-api/ws-provider/node";
@@ -12,13 +12,13 @@ import { ed25519 } from "@noble/curves/ed25519";
 
 dotenv.config();
 
-// Connect to the relay chain.
-const client = createClient(
-  withPolkadotSdkCompat(getWsProvider("wss://westend-coretime-rpc.polkadot.io"))
-);
+// // Connect to the relay chain.
+// const client = createClient(
+//   withPolkadotSdkCompat(getWsProvider("wss://westend-coretime-rpc.polkadot.io"))
+// );
 
-// Create API
-const wndCTApi = client.getTypedApi(wndCT);
+// // Create API
+// const wndCTApi = client.getTypedApi(wndCT);
 
 // Helper functions, this can later go to another file
 const executeTx = async (tx, signer) => {
@@ -60,61 +60,36 @@ const USER_SIGNER = getPolkadotSigner(
 );
 
 // Main Function
-const main = async () => {
+const coretimeActions = async (api, buy, interlace, region, parts) => {
   try {
-    console.log("Buying a core...");
-    //First we buy a core
-    const core = await buyCore(wndCTApi, PDP_SIGNER);
-    if (!core.ok) throw new Error("Could not buy a core", core);
-    const brokerEvents = extractEventValues(core.events, "Broker");
-    const regionInfo = brokerEvents[0].value.region_id;
-    console.log("Core Bought ✅", {
-      ...regionInfo,
-      mask: regionInfo.mask.asHex(),
-    });
-    // regionInfo is an object that looks like:
-    //  {
-    //   begin: 295802,
-    //   core: 13,
-    //   mask: FixedSizeBinary {
-    //     asText: [Function (anonymous)],
-    //     asHex: [Function (anonymous)],
-    //     asOpaqueHex: [Function (anonymous)],
-    //     asBytes: [Function (anonymous)],
-    //     asOpaqueBytes: [Function (anonymous)]
-    //  }
-    // console.log("Startig Interlace...");
-    // const interlacing = await interlaceRegions(
-    //   wndCTApi,
-    //   { ...regionInfo, mask: regionInfo.mask.asHex() },
-    //   16,
-    //   interlace,
-    //   PDP_SIGNER
-    // );
-    // console.log("Cores Interlaced ✅", interlacing);
-    // console.log("Core assingment started...");
-    // const assigned = await assignCore(
-    //   wndCTApi,
-    //   { begin: 295802, core: 9, mask: "0xffffffffff0000000000" },
-    //   PDP_SIGNER,
-    //   2156,
-    //   "Provisional"
-    // );
-    // if (!assigned.ok) throw new Error("Core couldn't be assigned", assigned);
-    // console.log("Core assigned ✅");
-    /*
-    //Uncomment this to transfer
-    console.log("Started transfer...");
-    const transfered = await transferCore(
-      wndCTApi,
-      { begin: 295802, core: 14, mask: "0xf8000000000000000000" },
-      PDP_SIGNER,
-      "5Epzt6iUypmDX1cwuf5ePqKekauU56LxBSj4x4arj11C1Vus"
-    );
-    if (!transfered.ok)
-      throw new Error("Core couldn't be transfered", transfered);
-    console.log("Core transfered ✅");
-    */
+    let regionInfo;
+    if (buy) {
+      console.log("Buying a core...");
+      //First we buy a core
+      const core = await buyCore(api, PDP_SIGNER);
+      if (!core.ok) throw new Error("Could not buy a core", core);
+      const brokerEvents = extractEventValues(core.events, "Broker");
+      const regionInfo = brokerEvents[0].value.region_id;
+      console.log("Core Bought ✅", {
+        ...regionInfo,
+        mask: regionInfo.mask.asHex(),
+      });
+    } else {
+      regionInfo = region;
+    }
+    if (interlace) {
+      console.log("Starting Interlace...");
+      const interlacing = await interlaceRegions(
+        api,
+        buy
+          ? { ...regionInfo, mask: regionInfo.mask.asHex() }
+          : { ...regionInfo },
+        parts ? parts : 8,
+        interlaceTx,
+        PDP_SIGNER
+      );
+      console.log("Cores Interlaced ✅", interlacing);
+    }
   } catch (error) {
     console.error("An error occurred:", error);
   }
@@ -128,7 +103,7 @@ const buyCore = async (api, pdp) => {
   return await executeTx(buyCall, pdp);
 };
 
-const interlace = async (api, region, pivot, pdp) => {
+const interlaceTx = async (api, region, pivot, pdp) => {
   const interlaceCall = api.tx.Broker.interlace({
     region_id: {
       begin: region.begin,
@@ -263,6 +238,8 @@ const maskFromBin = (bin) => {
   return `0x${hexMask.join("")}`;
 };
 
-main()
-  .catch(console.error)
-  .finally(() => process.exit());
+// main()
+//   .catch(console.error)
+//   .finally(() => process.exit());
+
+export default coretimeActions;

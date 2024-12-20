@@ -75,11 +75,11 @@ const USER_SIGNER = getPolkadotSigner(
 );
 
 // Main Function
-const main = async () => {
+const doRegister = async (api) => {
   try {
     console.log("Registering Proxy...");
     const proxy = await setProxy(
-      wndApi,
+      api,
       USER_SIGNER,
       process.env.PDP_PUBLIC_ADDRESS_2
     );
@@ -87,7 +87,7 @@ const main = async () => {
     console.log("Proxy registered ✅");
     console.log("Reserving paraID...");
     const paraID = await reserveParaId(
-      wndApi,
+      api,
       process.env.USER_PUBLIC_ADDRESS_2,
       PDP_SIGNER
     );
@@ -106,7 +106,7 @@ const main = async () => {
     console.log("Wasm and Head ready ✅");
     console.log("Registering Parachain...");
     const paraRegistration = await registerParachain(
-      wndApi,
+      api,
       process.env.USER_PUBLIC_ADDRESS_2,
       PDP_SIGNER,
       wasmBytes,
@@ -118,7 +118,7 @@ const main = async () => {
     console.log("Parachain registered ✅");
     console.log("Removing poxy...");
     const proxyRemoval = await removeProxy(
-      wndApi,
+      api,
       process.env.USER_PUBLIC_ADDRESS_2,
       PDP_SIGNER,
       process.env.PDP_PUBLIC_ADDRESS_2
@@ -140,25 +140,6 @@ const setProxy = async (api, user, pdp) => {
   });
 
   return await executeTx(setProxyTx, user);
-  // setProxy.signSubmitAndWatch(user).subscribe({
-  //   next: (event) => {
-  //     if (event.type === "TxSigned") {
-  //       console.log("Transaction signed:", event);
-  //     } else if (event.type === "TxBroadcasted") {
-  //       console.log("Transaction broadcasted:", event);
-  //     } else if (event.type === "TxBestBlocksState") {
-  //       console.log("Best block state updated:", event);
-  //     } else if (event.type === "TxFinalized") {
-  //       console.log("Transaction finalized:", event);
-  //     }
-  //   },
-  //   error: (error) => {
-  //     console.error("Error:", error);
-  //   },
-  //   complete: () => {
-  //     console.log("proxy created");
-  //   },
-  // });
 };
 
 const reserveParaId = async (api, user, pdp) => {
@@ -170,29 +151,6 @@ const reserveParaId = async (api, user, pdp) => {
   });
 
   return await executeTx(registerParaId, pdp);
-
-  // registerParaId.signSubmitAndWatch(pdp).subscribe({
-  //   next: (event) => {
-  //     if (event.type === "TxSigned") {
-  //       console.log("Transaction signed:", event);
-  //     } else if (event.type === "TxBroadcasted") {
-  //       console.log("Transaction broadcasted:", event);
-  //     } else if (event.type === "TxBestBlocksState") {
-  //       console.log("Best block state updated:", event);
-  //     } else if (event.type === "TxFinalized") {
-  //       //the event should have the "who" (which must match the original account), and the reserved paraID.
-  //       //we'll save this on 'result'
-  //       console.log("Transaction finalized:", event);
-  //     }
-  //     console.log("ACA", event);
-  //   },
-  //   error: (error) => {
-  //     console.error("Error:", error);
-  //   },
-  //   complete: () => {
-  //     console.log("paraID registered");
-  //   },
-  // });
 };
 
 const removeProxy = async (api, user, pdp, pdpPublic) => {
@@ -208,27 +166,6 @@ const removeProxy = async (api, user, pdp, pdpPublic) => {
   });
 
   return await executeTx(proxyRemoveProxy, pdp);
-
-  // proxyRemoveProxy.signSubmitAndWatch(pdp).subscribe({
-  //   next: (event) => {
-  //     if (event.type === "TxSigned") {
-  //       console.log("Transaction signed:", event);
-  //     } else if (event.type === "TxBroadcasted") {
-  //       console.log("Transaction broadcasted:", event);
-  //     } else if (event.type === "TxBestBlocksState") {
-  //       console.log("Best block state updated:", event);
-  //     } else if (event.type === "TxFinalized") {
-  //       console.log("Transaction finalized:", event);
-  //     }
-  //     console.log("ACA", event);
-  //   },
-  //   error: (error) => {
-  //     console.error("Error:", error);
-  //   },
-  //   complete: () => {
-  //     console.log("pdp proxy removed");
-  //   },
-  // });
 };
 
 const deRegisterParachain = async (api, user, pdp, id) => {
@@ -255,28 +192,10 @@ const registerParachain = async (api, user, pdp, wasm, head, id) => {
   });
 
   return await executeTx(registerParachainTx, pdp);
-
-  // registerParachain.signSubmitAndWatch(pdp).subscribe({
-  //   next: (event) => {
-  //     if (event.type === "TxSigned") {
-  //       console.log("Transaction signed:", event);
-  //     } else if (event.type === "TxBroadcasted") {
-  //       console.log("Transaction broadcasted:", event);
-  //     } else if (event.type === "TxBestBlocksState") {
-  //       console.log("Best block state updated:", event);
-  //     } else if (event.type === "TxFinalized") {
-  //       console.log("Transaction finalized:", event);
-  //     }
-  //   },
-  //   error: (error) => {
-  //     console.error("Error:", error);
-  //   },
-  //   complete: () => {
-  //     console.log("parachain registation started");
-  //   },
-  // });
 };
 
-main()
-  .catch(console.error)
-  .finally(() => process.exit());
+// main()
+//   .catch(console.error)
+//   .finally(() => process.exit());
+
+export default doRegister;

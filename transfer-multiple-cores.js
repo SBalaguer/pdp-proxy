@@ -56,12 +56,12 @@ const main = async () => {
       PDP_SIGNER,
       accountStaging
     );
-    await transferMultiple(
-      wndCTApi,
-      coresToTransferProd,
-      PDP_SIGNER,
-      accountProd
-    );
+    // await transferMultiple(
+    //   wndCTApi,
+    //   coresToTransferProd,
+    //   PDP_SIGNER,
+    //   accountProd
+    // );
   } catch (error) {
     console.error("An error occurred:", error);
   }

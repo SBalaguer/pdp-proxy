@@ -1,0 +1,156 @@
+{
+  "staging": [
+    {
+      "core": 6,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0x0000000000ffc0000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0xffc00000000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0x00000003ff0000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0x003ff000000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0x000000000000000003ff",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0x000000000000000ffc00",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0x0000000000003ff00000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0x00000ffc000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    }
+  ],
+  "prod": [
+    {
+      "core": 15,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0x000000000000000ffc00",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 15,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0xffc00000000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 15,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0x00000ffc000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 15,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0x00000003ff0000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 15,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0x000000000000000003ff",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 15,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0x003ff000000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 15,
+      "begin": 299582,
+      "end": 300842,
+      "task": null,
+      "mask": "0x0000000000003ff00000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    }
+  ]
+}

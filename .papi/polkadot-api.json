@@ -9,6 +9,10 @@
     "wndCT": {
       "wsUrl": "wss://westend-coretime-rpc.polkadot.io",
       "metadata": ".papi/metadata/wndCT.scale"
+    },
+    "paseoCT": {
+      "wsUrl": "wss://sys.ibp.network/coretime-paseo",
+      "metadata": ".papi/metadata/paseoCT.scale"
     }
   }
 }

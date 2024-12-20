@@ -72,8 +72,8 @@ const prepareData = (userRegions) => {
         task: null,
         mask: keyArgs.mask.asHex(),
         owner: item.value.owner,
-        status: "Available",
-        relay: "Westend",
+        status: "AVAILABLE",
+        chain: "WESTEND",
       };
     })
     .sort((r1, r2) => r1.core - r2.core);
