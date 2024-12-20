@@ -60,7 +60,6 @@ async function main() {
   let interlaceDetails = null;
 
   if (func[0] === "Interlace Core") {
-    console.log("im here!");
     interlaceDetails = await inquirer.prompt([
       {
         type: "input",
@@ -90,8 +89,6 @@ async function main() {
       },
     ]);
   }
-
-  console.log("im here 2!");
 
   const core = {
     begin: Number(interlaceDetails.coreBegin),
@@ -123,10 +120,9 @@ async function main() {
     } finally {
       () => process.exit;
     }
-    //TODO: Agregar contains a lo de abajo! func es un array
   } else if (
-    func === "Buy Core" &&
-    func === "Interlace Core" &&
+    func.includes("Buy Core") &&
+    func.includes("Interlace Core") &&
     interlaceDetails
   ) {
     const api = buildApi(chain, "coretime");
