@@ -69,7 +69,7 @@ const coretimeActions = async (api, buy, interlace, region, parts) => {
       const core = await buyCore(api, PDP_SIGNER);
       if (!core.ok) throw new Error("Could not buy a core", core);
       const brokerEvents = extractEventValues(core.events, "Broker");
-      const regionInfo = brokerEvents[0].value.region_id;
+      regionInfo = brokerEvents[0].value.region_id;
       console.log("Core Bought ✅", {
         ...regionInfo,
         mask: regionInfo.mask.asHex(),
@@ -77,6 +77,8 @@ const coretimeActions = async (api, buy, interlace, region, parts) => {
     } else {
       regionInfo = region;
     }
+    console.log("interlace", interlace);
+    console.log(regionInfo);
     if (interlace) {
       console.log("Starting Interlace...");
       const interlacing = await interlaceRegions(

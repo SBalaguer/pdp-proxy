@@ -90,13 +90,40 @@ async function main() {
     ]);
   }
 
-  const core = {
-    begin: Number(interlaceDetails.coreBegin),
-    core: Number(interlaceDetails.coreNumber),
-    mask: interlaceDetails.coreMask,
-  };
+  if (func.includes("Buy Core") && func.includes("Interlace Core")) {
+    interlaceDetails = await inquirer.prompt([
+      {
+        type: "input",
+        name: "parts",
+        message: "Enter the number of parts. Suggested is 8:",
+        validate: (input) =>
+          input.trim() ? true : "Please provide a valid number greater than 0.",
+      },
+    ]);
+  }
 
-  if (func[0] === "Interlace Core" && interlaceDetails) {
+  const core =
+    func[0] != "Buy Core"
+      ? {
+          begin: Number(interlaceDetails.coreBegin),
+          core: Number(interlaceDetails.coreNumber),
+          mask: interlaceDetails.coreMask,
+        }
+      : null;
+  if (
+    func.includes("Buy Core") &&
+    func.includes("Interlace Core") &&
+    interlaceDetails
+  ) {
+    const api = buildApi(chain, "coretime");
+    try {
+      await coretimeActions(api, true, true, null, interlaceDetails.parts);
+    } catch (error) {
+      console.error("An error occurred:", error);
+    } finally {
+      () => process.exit;
+    }
+  } else if (func[0] === "Interlace Core" && interlaceDetails) {
     const api = buildApi(chain, "coretime");
     try {
       await coretimeActions(
@@ -115,19 +142,6 @@ async function main() {
     const api = buildApi(chain, "coretime");
     try {
       await coretimeActions(api, true, false, null, null);
-    } catch (error) {
-      console.error("An error occurred:", error);
-    } finally {
-      () => process.exit;
-    }
-  } else if (
-    func.includes("Buy Core") &&
-    func.includes("Interlace Core") &&
-    interlaceDetails
-  ) {
-    const api = buildApi(chain, "coretime");
-    try {
-      await coretimeActions(api, true, true, null, interlaceDetails.parts);
     } catch (error) {
       console.error("An error occurred:", error);
     } finally {
