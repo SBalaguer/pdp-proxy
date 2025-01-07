@@ -77,8 +77,6 @@ const coretimeActions = async (api, buy, interlace, region, parts) => {
     } else {
       regionInfo = region;
     }
-    console.log("interlace", interlace);
-    console.log(regionInfo);
     if (interlace) {
       console.log("Starting Interlace...");
       const interlacing = await interlaceRegions(

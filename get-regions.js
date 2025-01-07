@@ -24,13 +24,13 @@ const accountProd = "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF";
 const main = async () => {
   try {
     const regions = await getRegionsForMultipleAccounts(wndCTApi, [
-      accountStaging,
+      // accountStaging,
       accountProd,
     ]);
     const parsedRegionsStaging = prepareData(regions[0]);
-    const parsedRegionsProd = prepareData(regions[1]);
+    // const parsedRegionsProd = prepareData(regions[1]);
     console.log("Staging", parsedRegionsStaging);
-    console.log("Prod", parsedRegionsProd);
+    // console.log("Prod", parsedRegionsProd);
   } catch (error) {
     console.error("An error occurred:", error);
   }

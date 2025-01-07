@@ -1,6 +1,8 @@
 //This is the process by which the PDP team buys a core each cycle, to then interlace it and have it available for users.
 //The way this process works is that PDP will listen to the amount of available cores and will buy a core when 2 or less are available.
 
+//TODO: Redo this logic for it to be a batch call
+
 import dotenv from "dotenv";
 
 import { wndCT } from "@polkadot-api/descriptors";
@@ -50,18 +52,18 @@ const PDP_SIGNER = getPolkadotSigner(
 // Main Function
 const main = async () => {
   try {
-    await transferMultiple(
-      wndCTApi,
-      coresToTransferStaging,
-      PDP_SIGNER,
-      accountStaging
-    );
     // await transferMultiple(
     //   wndCTApi,
-    //   coresToTransferProd,
+    //   coresToTransferStaging,
     //   PDP_SIGNER,
-    //   accountProd
+    //   accountStaging
     // );
+    await transferMultiple(
+      wndCTApi,
+      coresToTransferProd,
+      PDP_SIGNER,
+      accountProd
+    );
   } catch (error) {
     console.error("An error occurred:", error);
   }
@@ -69,30 +71,37 @@ const main = async () => {
 
 const transferMultiple = async (api, cores, signer, to) => {
   console.log(`Started bulk transfer to ${to}...`);
-  for (const core of cores) {
-    const transfered = await transferCore(
+  const callsArray = cores.map((core) =>
+    transferCore(
       api,
       { core: core.core, mask: core.mask, begin: core.begin },
-      signer,
       to
-    );
-    if (!transfered.ok)
-      throw new Error(
-        `Core ${core.core} with mask ${core.mask} couldn't be transfered`,
-        transfered
-      );
-    console.log(`Core ${core.core} with mask ${core.mask} was transfered ✅`);
+    )
+  );
+
+  const coreTansfers = await batchTransfer(api, callsArray, signer);
+  if (!coreTansfers.ok) {
+    throw new Error(`Cores couldn't be send in batch`, transfered);
   }
+
+  console.log(`Cores transfered in batch ✅`);
   console.log(`Finished bulk transfer to ${to}.`);
 };
 
-const transferCore = async (api, region, pdp, to) => {
-  const transferCall = api.tx.Broker.transfer({
+const transferCore = (api, region, to) => {
+  const builtCall = api.tx.Broker.transfer({
     region_id: { ...region, mask: FixedSizeBinary.fromHex(region.mask) },
     new_owner: to,
   });
+  const decodedCall = builtCall.decodedCall;
+  return decodedCall;
+};
 
-  return await executeTx(transferCall, pdp);
+const batchTransfer = async (api, callsArray, pdp) => {
+  const batchCall = api.tx.Utility.force_batch({
+    calls: callsArray,
+  });
+  return await executeTx(batchCall, pdp);
 };
 
 main()

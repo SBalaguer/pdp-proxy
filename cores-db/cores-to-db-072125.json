@@ -1,0 +1,326 @@
+{
+  "staging": [
+    {
+      "core": 6,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x000000000000000ffc00",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x00000003ff0000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x003ff000000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x000000000000000003ff",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x0000000000003ff00000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0xffc00000000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x00000ffc000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 6,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x0000000000ffc0000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 7,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x00000003ff0000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 7,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x000000000000000003ff",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 7,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x0000000000ffc0000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 7,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x003ff000000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 7,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x00000ffc000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 7,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x000000000000000ffc00",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 7,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x0000000000003ff00000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 7,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0xffc00000000000000000",
+      "owner": "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    }
+  ],
+  "prod": [
+    {
+      "core": 8,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0xffc00000000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 8,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x0000000000003ff00000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 8,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x003ff000000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 8,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x00000ffc000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 8,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x0000000000ffc0000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 8,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x000000000000000ffc00",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 8,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x000000000000000003ff",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 8,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x00000003ff0000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 9,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x0000000000ffc0000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 9,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x003ff000000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 9,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x00000ffc000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 9,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x00000003ff0000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 9,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x0000000000003ff00000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 9,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x000000000000000003ff",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 9,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0x000000000000000ffc00",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    },
+    {
+      "core": 9,
+      "begin": 302102,
+      "end": 303362,
+      "task": null,
+      "mask": "0xffc00000000000000000",
+      "owner": "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF",
+      "status": "AVAILABLE",
+      "chain": "WESTEND"
+    }
+  ]
+}

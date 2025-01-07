@@ -30,9 +30,9 @@ async function main() {
     functionChoices = [
       "Buy Core",
       "Interlace Core",
-      "Transfer Core",
-      "Transfer Multiple Cores",
-      "Query Cores",
+      // "Transfer Core",
+      // "Transfer Multiple Cores",
+      // "Query Cores",
     ];
   } else if (action === "Perform Registration") {
     //already perform registration here.
@@ -117,7 +117,13 @@ async function main() {
   ) {
     const api = buildApi(chain, "coretime");
     try {
-      await coretimeActions(api, true, true, null, interlaceDetails.parts);
+      await coretimeActions(
+        api,
+        true,
+        true,
+        null,
+        Number(interlaceDetails.parts)
+      );
     } catch (error) {
       console.error("An error occurred:", error);
     } finally {
