@@ -1,24 +1,7 @@
 //This is the process by which the PDP team buys a core each cycle, to then interlace it and have it available for users.
 //The way this process works is that PDP will listen to the amount of available cores and will buy a core when 2 or less are available.
-
-import dotenv from "dotenv";
-
-import { wndCT, paseoCT } from "@polkadot-api/descriptors";
-import { createClient, FixedSizeBinary, Enum } from "polkadot-api";
-import { getPolkadotSigner } from "polkadot-api/signer";
-import { getWsProvider } from "polkadot-api/ws-provider/node";
-import { withPolkadotSdkCompat } from "polkadot-api/polkadot-sdk-compat";
-import { ed25519 } from "@noble/curves/ed25519";
-
-dotenv.config();
-
-// // Connect to the relay chain.
-// const client = createClient(
-//   withPolkadotSdkCompat(getWsProvider("wss://westend-coretime-rpc.polkadot.io"))
-// );
-
-// // Create API
-// const wndCTApi = client.getTypedApi(wndCT);
+import { FixedSizeBinary, Enum } from "polkadot-api";
+import { PDP_SIGNER, USER_SIGNER } from "../utils/signers.js";
 
 // Helper functions, this can later go to another file
 const executeTx = async (tx, signer) => {
@@ -45,19 +28,6 @@ const extractEventValues = (events, types) => {
   // Map the filtered events to their values
   return filteredEvents.map((event) => event.value);
 };
-
-// Signer Creation
-const PDP_SIGNER = getPolkadotSigner(
-  ed25519.getPublicKey(process.env.PDP_PRIVATE_2),
-  "Ed25519",
-  (call) => ed25519.sign(call, process.env.PDP_PRIVATE_2)
-);
-
-const USER_SIGNER = getPolkadotSigner(
-  ed25519.getPublicKey(process.env.USER_PRIVATE_2),
-  "Ed25519",
-  (call) => ed25519.sign(call, process.env.USER_PRIVATE_2)
-);
 
 // Main Function
 const coretimeActions = async (api, buy, interlace, region, parts) => {
@@ -243,3 +213,4 @@ const maskFromBin = (bin) => {
 //   .finally(() => process.exit());
 
 export default coretimeActions;
+export { PDP_SIGNER, USER_SIGNER };

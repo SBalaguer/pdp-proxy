@@ -52,12 +52,12 @@ const PDP_SIGNER = getPolkadotSigner(
 // Main Function
 const main = async () => {
   try {
-    // await transferMultiple(
-    //   wndCTApi,
-    //   coresToTransferStaging,
-    //   PDP_SIGNER,
-    //   accountStaging
-    // );
+    await transferMultiple(
+      wndCTApi,
+      coresToTransferStaging,
+      PDP_SIGNER,
+      accountStaging
+    );
     await transferMultiple(
       wndCTApi,
       coresToTransferProd,
