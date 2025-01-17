@@ -1,4 +1,3 @@
-import dotenv from "dotenv";
 import fs from "fs/promises";
 
 import {
@@ -7,12 +6,10 @@ import {
   WestendRuntimeProxyType,
 } from "@polkadot-api/descriptors";
 import { createClient, Binary } from "polkadot-api";
-import { getPolkadotSigner } from "polkadot-api/signer";
 import { getWsProvider } from "polkadot-api/ws-provider/node";
 import { withPolkadotSdkCompat } from "polkadot-api/polkadot-sdk-compat";
-import { ed25519 } from "@noble/curves/ed25519";
 
-dotenv.config();
+import { PDP_SIGNER } from "../utils/signers.js";
 
 // Connect to the relay chain.
 const client = createClient(
@@ -61,19 +58,6 @@ const extractEventValues = (events, types) => {
   return filteredEvents.map((event) => event.value);
 };
 
-// Signer Creation
-const PDP_SIGNER = getPolkadotSigner(
-  ed25519.getPublicKey(process.env.PDP_PRIVATE_2),
-  "Ed25519",
-  (call) => ed25519.sign(call, process.env.PDP_PRIVATE_2)
-);
-
-const USER_SIGNER = getPolkadotSigner(
-  ed25519.getPublicKey(process.env.USER_PRIVATE_2),
-  "Ed25519",
-  (call) => ed25519.sign(call, process.env.USER_PRIVATE_2)
-);
-
 // Main Function
 const doRegister = async (api) => {
   try {
@@ -81,16 +65,12 @@ const doRegister = async (api) => {
     const proxy = await setProxy(
       api,
       USER_SIGNER,
-      process.env.PDP_PUBLIC_ADDRESS_2
+      process.env.PDP_PUBLIC_ADDRESS
     );
     if (!proxy.ok) throw new Error("Proxy could not bere registered", proxy);
     console.log("Proxy registered ✅");
     console.log("Reserving paraID...");
-    const paraID = await reserveParaId(
-      api,
-      process.env.USER_PUBLIC_ADDRESS_2,
-      PDP_SIGNER
-    );
+    const paraID = await reserveParaId(api, process.env.TEST_ANON, PDP_SIGNER);
     if (!paraID.ok) throw new Error("paraID could not be reserved", paraID);
     const id = extractEventValues(paraID.events, "Registrar")[0].value.para_id;
     if (!id) throw new Error("There is no paraID", id);
@@ -107,7 +87,7 @@ const doRegister = async (api) => {
     console.log("Registering Parachain...");
     const paraRegistration = await registerParachain(
       api,
-      process.env.USER_PUBLIC_ADDRESS_2,
+      process.env.TEST_ANON,
       PDP_SIGNER,
       wasmBytes,
       headBytes,
@@ -119,9 +99,9 @@ const doRegister = async (api) => {
     console.log("Removing poxy...");
     const proxyRemoval = await removeProxy(
       api,
-      process.env.USER_PUBLIC_ADDRESS_2,
+      process.env.USER_PUBLIC_ADDRESS,
       PDP_SIGNER,
-      process.env.PDP_PUBLIC_ADDRESS_2
+      process.env.PDP_PUBLIC_ADDRESS
     );
     if (!proxyRemoval.ok)
       throw new Error("Proxy could not be removed", proxyRemoval);
@@ -193,9 +173,5 @@ const registerParachain = async (api, user, pdp, wasm, head, id) => {
 
   return await executeTx(registerParachainTx, pdp);
 };
-
-// main()
-//   .catch(console.error)
-//   .finally(() => process.exit());
 
 export default doRegister;

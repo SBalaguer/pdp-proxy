@@ -43,7 +43,7 @@ async function main() {
     } catch (error) {
       console.error("An error occurred:", error);
     } finally {
-      () => process.exit;
+      process.exit();
     }
   }
 
@@ -127,7 +127,7 @@ async function main() {
     } catch (error) {
       console.error("An error occurred:", error);
     } finally {
-      () => process.exit;
+      process.exit();
     }
   } else if (func[0] === "Interlace Core" && interlaceDetails) {
     const api = buildApi(chain, "coretime");
@@ -142,7 +142,7 @@ async function main() {
     } catch (error) {
       console.error("An error occurred:", error);
     } finally {
-      () => process.exit;
+      process.exit();
     }
   } else if (func[0] === "Buy Core") {
     const api = buildApi(chain, "coretime");
@@ -151,7 +151,7 @@ async function main() {
     } catch (error) {
       console.error("An error occurred:", error);
     } finally {
-      () => process.exit;
+      process.exit();
     }
   }
 }

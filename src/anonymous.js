@@ -44,8 +44,8 @@ const doProxyFlow = async (api) => {
     const addProxys = await batchProxy(
       wndApi,
       anonProxyAcc,
-      process.env.USER_PUBLIC_ADDRESS_2,
-      process.env.PDP_PUBLIC_ADDRESS_2,
+      process.env.USER_PUBLIC_ADDRES,
+      process.env.PDP_PUBLIC_ADDRESS,
       PDP_SIGNER
     );
     if (!addProxys.ok)
@@ -56,7 +56,7 @@ const doProxyFlow = async (api) => {
     const removePDPProxy = await removeProxy(
       wndApi,
       anonProxyAcc,
-      process.env.PDP_PUBLIC_ADDRESS_2,
+      process.env.PDP_PUBLIC_ADDRESS,
       PDP_SIGNER
     );
     if (!removePDPProxy.ok)

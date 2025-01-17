@@ -1,4 +1,4 @@
-import { wndCT, paseoCT } from "@polkadot-api/descriptors";
+import { wndCT, paseoCT, wnd } from "@polkadot-api/descriptors";
 
 export const chains = {
   Polkadot: {
@@ -21,7 +21,7 @@ export const chains = {
   Westend: {
     relay: {
       wss: "wss://westend-rpc.polkadot.io",
-      descriptor: null,
+      descriptor: wnd,
     },
     coretime: {
       wss: "wss://westend-coretime-rpc.polkadot.io",

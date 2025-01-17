@@ -3,16 +3,12 @@
 
 //TODO: Redo this logic for it to be a batch call
 
-import dotenv from "dotenv";
-
 import { wndCT } from "@polkadot-api/descriptors";
 import { createClient, FixedSizeBinary, Enum } from "polkadot-api";
-import { getPolkadotSigner } from "polkadot-api/signer";
 import { getWsProvider } from "polkadot-api/ws-provider/node";
 import { withPolkadotSdkCompat } from "polkadot-api/polkadot-sdk-compat";
-import { ed25519 } from "@noble/curves/ed25519";
 import { data } from "./cores.js";
-dotenv.config();
+import { PDP_SIGNER } from "../utils/signers.js";
 
 const coresToTransferStaging = data.staging;
 const coresToTransferProd = data.prod;
@@ -41,13 +37,6 @@ const executeTx = async (tx, signer) => {
     throw error;
   }
 };
-
-// Signer Creation
-const PDP_SIGNER = getPolkadotSigner(
-  ed25519.getPublicKey(process.env.PDP_PRIVATE_2),
-  "Ed25519",
-  (call) => ed25519.sign(call, process.env.PDP_PRIVATE_2)
-);
 
 // Main Function
 const main = async () => {
