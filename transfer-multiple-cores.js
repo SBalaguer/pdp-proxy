@@ -8,7 +8,7 @@ import { createClient, FixedSizeBinary, Enum } from "polkadot-api";
 import { getWsProvider } from "polkadot-api/ws-provider/node";
 import { withPolkadotSdkCompat } from "polkadot-api/polkadot-sdk-compat";
 import { data } from "./cores.js";
-import { PDP_SIGNER } from "../utils/signers.js";
+import { PDP_SIGNER } from "./utils/signers.js";
 
 const coresToTransferStaging = data.staging;
 const coresToTransferProd = data.prod;

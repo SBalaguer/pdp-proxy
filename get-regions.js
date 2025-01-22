@@ -19,6 +19,7 @@ const wndCTApi = client.getTypedApi(wndCT);
 
 const accountStaging = "5CfP97wzNCKkgHsTpD8geoqnKnNv9DydD1y5yfgqtAeVJzMm";
 const accountProd = "5GwvfZEstcAdxqj2mawkWAoMKxzqhXW5G8G6htRCMHg3GkbF";
+const accountPDP = "5EWNV9XKKsLR3oCBixA5UdLxibvnh82uLGd6ouEiQLKoEnog";
 
 // Main Function
 const main = async () => {
@@ -26,11 +27,14 @@ const main = async () => {
     const regions = await getRegionsForMultipleAccounts(wndCTApi, [
       accountStaging,
       accountProd,
+      // accountPDP,
     ]);
     const parsedRegionsStaging = prepareData(regions[0]);
     const parsedRegionsProd = prepareData(regions[1]);
+    // const parsedRegionsPDP = prepareData(regions[2]);
     console.log("Staging", parsedRegionsStaging);
     console.log("Prod", parsedRegionsProd);
+    // console.log("PDP", parsedRegionsPDP);
   } catch (error) {
     console.error("An error occurred:", error);
   }
